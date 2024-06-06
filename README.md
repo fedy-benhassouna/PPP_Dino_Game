@@ -72,5 +72,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 - Uses OpenCV, MediaPipe, CVZone, PyAutoGUI, and Pygame for various functionalities.
 
 ## Contact
-For any questions or feedback, please contact [your email].
+For any questions or feedback, please contact fedy.benhassouna@insat.ucar.tn .
 
