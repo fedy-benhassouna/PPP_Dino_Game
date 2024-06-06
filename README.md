@@ -64,8 +64,7 @@ This project is a Dino game controlled by eye blinks, using OpenCV, MediaPipe, a
 - **Game Mechanics**: Implemented with Pygame for animations, obstacle spawning, and collision detection.
 - **Sound Effects**: Added using Pygame mixer for enhanced user experience.
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+
 
 ## Acknowledgements
 - Inspired by the Chrome Dino game.
