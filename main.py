@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
 pygame.display.set_caption("Dino Game")
 
-game_font = pygame.font.Font("assets/PressStart2P-Regular.ttf", 24)
+game_font = pygame.font.Font("PressStart2P-Regular.ttf", 24)
 
 # Eye Blink Detection Variables
 cap = cv2.VideoCapture(1)
@@ -31,11 +31,11 @@ obstacle_timer = 0
 obstacle_spawn = False
 obstacle_cooldown = 1000
 
-ground = pygame.image.load("assets/ground.png")
+ground = pygame.image.load("ground.png")
 ground = pygame.transform.scale(ground, (1280, 20))
 ground_x = 0
 ground_rect = ground.get_rect(center=(640, 400))
-cloud = pygame.image.load("assets/cloud.png")
+cloud = pygame.image.load("cloud.png")
 cloud = pygame.transform.scale(cloud, (200, 80))
 
 cloud_group = pygame.sprite.Group()
@@ -61,14 +61,14 @@ class Dino(pygame.sprite.Sprite):
         self.ducking_sprites = []
 
         self.running_sprites.append(pygame.transform.scale(
-            pygame.image.load("assets/Dino1.png"), (80, 100)))
+            pygame.image.load("Dino1.png"), (80, 100)))
         self.running_sprites.append(pygame.transform.scale(
-            pygame.image.load("assets/Dino2.png"), (80, 100)))
+            pygame.image.load("Dino2.png"), (80, 100)))
 
         self.ducking_sprites.append(pygame.transform.scale(
-            pygame.image.load(f"assets/DinoDucking1.png"), (110, 60)))
+            pygame.image.load(f"DinoDucking1.png"), (110, 60)))
         self.ducking_sprites.append(pygame.transform.scale(
-            pygame.image.load(f"assets/DinoDucking2.png"), (110, 60)))
+            pygame.image.load(f"DinoDucking2.png"), (110, 60)))
 
         self.x_pos = x_pos
         self.y_pos = y_pos
@@ -117,7 +117,7 @@ class Cactus(pygame.sprite.Sprite):
         self.sprites = []
         for i in range(1, 7):
             current_sprite = pygame.transform.scale(
-                pygame.image.load(f"assets/cacti/cactus{i}.png"), (100, 100))
+                pygame.image.load(f"cacti/cactus{i}.png"), (100, 100))
             self.sprites.append(current_sprite)
         self.image = random.choice(self.sprites)
         self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
@@ -134,10 +134,10 @@ class Ptero(pygame.sprite.Sprite):
         self.sprites = []
         self.sprites.append(
             pygame.transform.scale(
-                pygame.image.load("assets/Ptero1.png"), (84, 62)))
+                pygame.image.load("Ptero1.png"), (84, 62)))
         self.sprites.append(
             pygame.transform.scale(
-                pygame.image.load("assets/Ptero2.png"), (84, 62)))
+                pygame.image.load("Ptero2.png"), (84, 62)))
         self.current_image = 0
         self.image = self.sprites[self.current_image]
         self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
@@ -170,9 +170,9 @@ dino_group.add(dinosaur)
 
 # Initialize Pygame mixer
 pygame.mixer.init()
-death_sfx = pygame.mixer.Sound("assets/sfx/lose.mp3")
-points_sfx = pygame.mixer.Sound("assets/sfx/100points.mp3")
-jump_sfx = pygame.mixer.Sound("assets/sfx/jump.mp3")
+death_sfx = pygame.mixer.Sound("sfx/lose.mp3")
+points_sfx = pygame.mixer.Sound("sfx/100points.mp3")
+jump_sfx = pygame.mixer.Sound("sfx/jump.mp3")
 
 CLOUD_EVENT = pygame.USEREVENT
 pygame.time.set_timer(CLOUD_EVENT, 3000)
